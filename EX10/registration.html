@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Job Registration Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+        }
+
+        .form-container {
+            width: 500px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #0275d8;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 80px;
+        }
+
+        input[type="submit"] {
+            margin-top: 25px;
+            background-color: #0275d8;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #014c87;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+
+    <h2>Job Registration Form</h2>
+
+    <form action="validate.php" method="POST">
+
+        <label for="username">User Name</label>
+        <input type="text"
+               id="username"
+               name="username"
+               required
+               placeholder="Choose a username">
+
+        <label for="password">Password</label>
+        <input type="password"
+               id="password"
+               name="password"
+               required
+               minlength="8"
+               placeholder="Min. 8 chars (1 upper, 1 lower, 1 digit, 1 special)">
+
+        <label for="name">Full Name</label>
+        <input type="text"
+               id="name"
+               name="name"
+               required
+               placeholder="Enter your full name">
+
+        <label for="email">Email Address</label>
+        <input type="email"
+               id="email"
+               name="email"
+               required
+               placeholder="username@example.com">
+
+        <label for="phone">Phone Number</label>
+        <input type="tel"
+               id="phone"
+               name="phone"
+               required
+               pattern="^\+?[0-9]{10,15}$"
+               title="Phone number must contain 10 to 15 digits."
+               placeholder="9876543210">
+
+        <label for="jobTitle">Applying for Position</label>
+        <select id="jobTitle" name="jobTitle" required>
+            <option value="">-- Select a Role --</option>
+            <option value="Software Engineer">Software Engineer</option>
+            <option value="Data Analyst">Data Analyst</option>
+            <option value="UI/UX Designer">UI/UX Designer</option>
+            <option value="Project Manager">Project Manager</option>
+        </select>
+
+        <label for="experience">Years of Experience</label>
+        <input type="number"
+               id="experience"
+               name="experience"
+               min="0"
+               max="40"
+               required
+               placeholder="Example: 2">
+
+        <label for="skills">Key Skills</label>
+        <textarea id="skills"
+                  name="skills"
+                  required
+                  placeholder="Example: Java, Python, SQL"></textarea>
+
+        <label for="card">Credit Card Number</label>
+        <input type="text"
+               id="card"
+               name="card"
+               required
+               autocomplete="cc-number"
+               pattern="^(?:[0-9][ -]*?){16}$"
+               title="Credit card number must contain exactly 16 digits."
+               placeholder="1234-5678-9012-3456">
+
+        <input type="submit" value="Register & Apply">
+
+    </form>
+
+</div>
+
+</body>
+</html>
