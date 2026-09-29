@@ -1,1 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Place Order</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 450px;
+        }
+        h2 {
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            font-weight: 600;
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+        input[type="text"], input[type="number"] {
+            padding: 10px 14px;
+            border: 1px solid #e2e8f0;
+            border-radius: 5px;
+            margin-bottom: 18px;
+            font-size: 15px;
+        }
+        input[type="text"]:focus, input[type="number"]:focus {
+            outline: none;
+            border-color: #4a90e2;
+        }
+        input[type="submit"] {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #357abd;
+        }
+        a {
+            color: #4a90e2;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-block;
+            margin-top: 15px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Place Order</h2>
+        <form action="insert_order.php" method="POST">
+            <label>Customer Name</label>
+            <input type="text" name="customer_name" required>
 
+            <label>Product Name</label>
+            <input type="text" name="product_name" required>
+
+            <label>Quantity</label>
+            <input type="number" name="quantity" min="1" required>
+
+            <label>Price</label>
+            <input type="number" name="price" step="0.01" min="0" required>
+
+            <input type="submit" value="Place Order">
+        </form>
+        <a href="view_orders.php">View All Orders →</a>
+    </div>
+</body>
+</html>
