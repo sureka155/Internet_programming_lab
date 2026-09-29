@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookstore>
+    <book id="1">
+        <title>Clean Code</title>
+        <author>Robert C. Martin</author>
+        <genre>Programming</genre>
+        <price currency="USD">42.99</price>
+        <publish_date>2008-08-01</publish_date>
+        <description>A handbook of agile software craftsmanship.</description>
+    </book>
+    <book id="2">
+        <title>The Pragmatic Programmer</title>
+        <author>Andrew Hunt and David Thomas</author>
+        <genre>Programming</genre>
+        <price currency="USD">45.00</price>
+        <publish_date>1999-10-30</publish_date>
+        <description>Your journey to mastery.</description>
+    </book>
+    <book id="3">
+        <title>Dune</title>
+        <author>Frank Herbert</author>
+        <genre>Sci-Fi</genre>
+        <price currency="USD">14.99</price>
+        <publish_date>1965-06-01</publish_date>
+        <description>A mythical and emotionally charged hero's journey set on a desert planet.</description>
+    </book>
+    <book id="4">
+        <title>The Hobbit</title>
+        <author>J.R.R. Tolkien</author>
+        <genre>Fantasy</genre>
+        <price currency="USD">12.50</price>
+        <publish_date>1937-09-21</publish_date>
+        <description>The unforgettable story of Bilbo Baggins and his journey to the Lonely Mountain.</description>
+    </book>
+    <book id="5">
+        <title>Atomic Habits</title>
+        <author>James Clear</author>
+        <genre>Self-Help</genre>
+        <price currency="USD">21.00</price>
+        <publish_date>2018-10-16</publish_date>
+        <description>An easy and proven way to build good habits and break bad ones.</description>
+    </book>
+    <book id="6">
+        <title>Sapiens</title>
+        <author>Yuval Noah Harari</author>
+        <genre>History</genre>
+        <price currency="USD">18.99</price>
+        <publish_date>2011-01-01</publish_date>
+        <description>A brief history of humankind from ancient times to the modern era.</description>
+    </book>
+    <book id="7">
+        <title>Educated</title>
+        <author>Tara Westover</author>
+        <genre>Biography</genre>
+        <price currency="USD">15.00</price>
+        <publish_date>2018-02-20</publish_date>
+        <description>An unforgettable memoir about a young girl who leaves her survivalist family to pursue an education.</description>
+    </book>
+    <book id="8">
+        <title>Thinking, Fast and Slow</title>
+        <author>Daniel Kahneman</author>
+        <genre>Psychology</genre>
+        <price currency="USD">16.99</price>
+        <publish_date>2011-10-25</publish_date>
+        <description>A detailed breakdown of the two systems that drive the way we think.</description>
+    </book>
+    <book id="9">
+        <title>The Silent Patient</title>
+        <author>Alex Michaelides</author>
+        <genre>Thriller</genre>
+        <price currency="USD">13.50</price>
+        <publish_date>2019-02-05</publish_date>
+        <description>A shocking psychological thriller about a woman's act of violence against her husband.</description>
+    </book>
+    <book id="10">
+        <title>Bad Blood</title>
+        <author>John Carreyrou</author>
+        <genre>Business</genre>
+        <price currency="USD">16.00</price>
+        <publish_date>2018-05-21</publish_date>
+        <description>The full inside story of the breathtaking rise and shocking collapse of Theranos.</description>
+    </book>
+</bookstore>
