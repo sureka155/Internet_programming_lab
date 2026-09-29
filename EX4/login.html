@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Job Portal - Login Screen</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: Arial, sans-serif;
+}
+body {
+background-color: #f2f4f7;
+}
+.navbar {
+background-color: #2c3e50;
+padding: 15px 30px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.navbar .brand {
+color: white;
+font-size: 22px;
+font-weight: bold;
+}
+.navbar .menu a {
+color: #bdc3c7;
+text-decoration: none;
+margin-left: 20px;
+font-size: 16px;
+padding: 5px 10px;
+}
+.navbar .menu a:hover, .navbar .menu a.active {
+color: white;
+background-color: #34495e;
+border-radius: 4px;
+}
+.login-container {
+max-width: 400px;
+margin: 50px auto;
+background: white;
+padding: 30px;
+border-radius: 6px;
+box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.login-container h2 {
+text-align: center;
+margin-bottom: 20px;
+color: #2c3e50;
+}
+.field-block {
+margin-bottom: 15px;
+}
+.field-block label {
+display: block;
+margin-bottom: 5px;
+font-weight: bold;
+color: #34495e;
+}
+.field-block input {
+width: 100%;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 4px;
+}
+.error-text {
+color: red;
+font-size: 12px;
+margin-top: 4px;
+display: none;
+}
+.submit-btn {
+width: 100%;
+padding: 12px;
+background-color: #3498db;
+border: none;
+color: white;
+font-size: 16px;
+font-weight: bold;
+border-radius: 4px;
+cursor: pointer;
+margin-top: 10px;
+}
+.submit-btn:hover {
+background-color: #2980b9;
+}
+</style>
+</head>
+<body>
+<div class="navbar">
+<div class="brand">JobPortal</div>
+<div class="menu">
+<a href="home.html">Home</a>
+<a href="login.html" class="active">Login</a>
+<a href="register.html">Register</a>
+</div>
+</div>
+<div class="login-container">
+<h2>User Login</h2>
+<form onsubmit="return validateFields(event)">
+<div class="field-block">
+<label>Email ID:</label>
+<input type="text" id="userEmail" placeholder="Enter Email">
+<div class="error-text" id="emailErr">Email is required!</div>
+</div>
+<div class="field-block">
+<label>Password:</label>
+<input type="password" id="userPass" placeholder="Enter Password">
+<div class="error-text" id="passErr">Password is required!</div>
+</div>
+<button type="submit" class="submit-btn">Login</button>
+</form>
+</div>
+<script>
+function validateFields(e) {
+e.preventDefault();
+var isCorrect = true;
+var em = document.getElementById("userEmail").value;
+var ps = document.getElementById("userPass").value;
+if (em == "") {
+document.getElementById("emailErr").style.display = "block";
+isCorrect = false;
+} else {
+document.getElementById("emailErr").style.display = "none";
+}
+if (ps == "") {
+document.getElementById("passErr").style.display = "block";
+isCorrect = false;
+} else {
+document.getElementById("passErr").style.display = "none";
+}
+if (isCorrect == true) {
+alert("Login done successfully!");
+window.location.href = "home.html";
+}
+}
+</script>
+</body>
+</html>

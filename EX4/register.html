@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Job Portal - Registration Form</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: Arial, sans-serif;
+}
+body {
+background-color: #f2f4f7;
+}
+.navbar {
+background-color: #2c3e50;
+padding: 15px 30px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.navbar .brand {
+color: white;
+font-size: 22px;
+font-weight: bold;
+}
+.navbar .menu a {
+color: #bdc3c7;
+text-decoration: none;
+margin-left: 20px;
+font-size: 16px;
+padding: 5px 10px;
+}
+.navbar .menu a:hover, .navbar .menu a.active {
+color: white;
+background-color: #34495e;
+border-radius: 4px;
+}
+.reg-container {
+max-width: 500px;
+margin: 30px auto;
+background: white;
+padding: 30px;
+border-radius: 6px;
+box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.reg-container h2 {
+text-align: center;
+margin-bottom: 20px;
+color: #2c3e50;
+}
+.input-row {
+margin-bottom: 16px;
+}
+.input-row label {
+display: block;
+margin-bottom: 6px;
+font-weight: bold;
+color: #34495e;
+font-size: 14px;
+}
+.input-row input[type="text"], .input-row input[type="email"], .input-row input[type="password"] {
+width: 100%;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 4px;
+font-size: 14px;
+}
+.input-row input[type="file"] {
+margin-top: 6px;
+font-size: 14px;
+}
+.error-lbl {
+color: red;
+font-size: 12px;
+margin-top: 4px;
+display: none;
+}
+.reg-btn {
+width: 100%;
+padding: 12px;
+background-color: #2ecc71;
+border: none;
+color: white;
+font-size: 16px;
+font-weight: bold;
+border-radius: 4px;
+cursor: pointer;
+margin-top: 10px;
+}
+.reg-btn:hover {
+background-color: #27ae60;
+}
+</style>
+</head>
+<body>
+<div class="navbar">
+<div class="brand">JobPortal</div>
+<div class="menu">
+<a href="home.html">Home</a>
+<a href="login.html">Login</a>
+<a href="register.html" class="active">Register</a>
+</div>
+</div>
+<div class="reg-container">
+<h2>Registration</h2>
+<form onsubmit="return handleRegister(event)">
+<div class="input-row">
+<label>Full Name *</label>
+<input type="text" id="fName" placeholder="Enter Full Name">
+<div class="error-lbl" id="err_fName">Full name is required!</div>
+</div>
+<div class="input-row">
+<label>Email ID Address *</label>
+<input type="email" id="fEmail" placeholder="Enter Email">
+<div class="error-lbl" id="err_fEmail">Email address field is required!</div>
+</div>
+<div class="input-row">
+<label>Contact Phone Number *</label>
+<input type="text" id="fPhone" placeholder="10 digit number">
+<div class="error-lbl" id="err_fPhone">Phone number field is required!</div>
+</div>
+<div class="input-row">
+<label>Account Password *</label>
+<input type="password" id="fPass" placeholder="Enter Password">
+<div class="error-lbl" id="err_fPass">Password field is required!</div>
+</div>
+<div class="input-row">
+<label>Desired Job Profile Title *</label>
+<input type="text" id="fTitle" placeholder="e.g. Web Developer">
+<div class="error-lbl" id="err_fTitle">Desired job title field is required!</div>
+</div>
+<div class="input-row">
+<label>Total Experience (Years) *</label>
+<input type="text" id="fExp" placeholder="e.g. 2">
+<div class="error-lbl" id="err_fExp">Experience timeline field is required!</div>
+</div>
+<div class="input-row">
+<label>LinkedIn Profile URL Link *</label>
+<input type="text" id="fLinkedIn" placeholder="https://linkedin.com">
+<div class="error-lbl" id="err_fLinkedIn">LinkedIn profile URL link is required!</div>
+</div>
+<div class="input-row">
+<label>Upload Your Resume (PDF/Doc) *</label>
+<input type="file" id="fFile" accept=".pdf,.doc,.docx">
+<div class="error-lbl" id="err_fFile">Please select your resume file!</div>
+</div>
+<button type="submit" class="reg-btn">Register</button>
+</form>
+</div>
+<script>
+function handleRegister(e) {
+e.preventDefault();
+var statusFlag = true;
+var n = document.getElementById("fName").value;
+var em = document.getElementById("fEmail").value;
+var ph = document.getElementById("fPhone").value;
+var ps = document.getElementById("fPass").value;
+var tl = document.getElementById("fTitle").value;
+var ex = document.getElementById("fExp").value;
+var lnk = document.getElementById("fLinkedIn").value;
+var fileInput = document.getElementById("fFile").value;
+if (n.trim() == "") { document.getElementById("err_fName").style.display="block"; statusFlag=false; } 
+else { document.getElementById("err_fName").style.display="none"; }
+if (em.trim() == "") { document.getElementById("err_fEmail").style.display="block"; statusFlag=false; } 
+else { document.getElementById("err_fEmail").style.display="none"; }
+if (ph.trim() == "") { document.getElementById("err_fPhone").style.display="block"; statusFlag=false; } 
+else { document.getElementById("err_fPhone").style.display="none"; }
+if (ps.trim() == "") { document.getElementById("err_fPass").style.display="block"; statusFlag=false; } 
+else { document.getElementById("err_fPass").style.display="none"; }
+if (tl.trim() == "") { document.getElementById("err_fTitle").style.display="block"; statusFlag=false; } 
+else { document.getElementById("err_fTitle").style.display="none"; }
+if (ex.trim() == "") { document.getElementById("err_fExp").style.display="block"; statusFlag=false; } 
+else { document.getElementById("err_fExp").style.display="none"; }
+if (lnk.trim() == "") { document.getElementById("err_fLinkedIn").style.display="block"; statusFlag=false; } 
+else { document.getElementById("err_fLinkedIn").style.display="none"; }
+if (fileInput == "") { document.getElementById("err_fFile").style.display="block"; statusFlag=false; } 
+else { document.getElementById("err_fFile").style.display="none"; }
+if (statusFlag == true) {
+if (ps.length < 6) {
+alert("Error: Password should be minimum 6 letters!");
+return false;
+}
+if (ph.length != 10 || isNaN(ph)) {
+alert("Error: Enter a correct 10 digit number!");
+return false;
+}
+if (isNaN(ex) || Number(ex) < 0) {
+alert("Error: Experience cannot be negative or invalid text!");
+return false;
+}
+if (lnk.indexOf("linkedin.com") == -1) {
+alert("Error: Please enter a proper valid LinkedIn URL link parameter!");
+return false;
+}
+alert("Registration finished successfully!");
+window.location.href = "login.html";
+}
+}
+</script>
+</body>
+</html>
