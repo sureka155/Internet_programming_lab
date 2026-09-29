@@ -1,1 +1,167 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <title>Online Shopping</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+
+        h1 {
+            background-color: #ff4f81;
+            color: white;
+            padding: 25px;
+            margin: 0;
+        }
+
+        .subtitle {
+            font-size: 22px;
+            color: #555;
+            margin-top: 25px;
+        }
+
+        .main-btn {
+            background-color: #ff4f81;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .main-btn:hover {
+            background-color: #e83e70;
+        }
+
+        #products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 30px;
+        }
+
+        .card {
+            background-color: white;
+            width: 220px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px #ccc;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            transition: 0.3s;
+        }
+
+        .card h2 {
+            color: #333;
+            font-size: 20px;
+        }
+
+        .card p {
+            color: #777;
+        }
+
+        .card h3 {
+            color: #ff4f81;
+            font-size: 20px;
+        }
+
+        .cart {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .cart:hover {
+            background-color: #ff4f81;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Online Shopping</h1>
+
+    <p class="subtitle">Our Products</p>
+
+    <button class="main-btn" onclick="loadProducts()">
+        View Products
+    </button>
+
+    <div id="products"></div>
+
+    <script>
+
+        function loadProducts() {
+
+            let xhttp = new XMLHttpRequest();
+
+            xhttp.onreadystatechange = function() {
+
+                if (this.readyState == 4 && this.status == 200) {
+
+                    let xml = this.responseXML;
+
+                    let products = xml.getElementsByTagName("product");
+
+                    let output = "";
+
+                    for (let i = 0; i < products.length; i++) {
+
+                        let id = products[i]
+                            .getElementsByTagName("id")[0]
+                            .textContent;
+
+                        let name = products[i]
+                            .getElementsByTagName("name")[0]
+                            .textContent;
+
+                        let price = products[i]
+                            .getElementsByTagName("price")[0]
+                            .textContent;
+
+                        output += `
+                            <div class="card">
+
+                                <h2>${name}</h2>
+
+                                <p>Product ID: ${id}</p>
+
+                                <h3>Price: Rs. ${price}</h3>
+
+                                <button class="cart">
+                                    Add to Cart
+                                </button>
+
+                            </div>
+                        `;
+                    }
+
+                    document.getElementById("products").innerHTML = output;
+                    document.querySelector(".main-btn").style.display = "none";
+                }
+            };
+
+            xhttp.open("GET", "products.xml", true);
+
+            xhttp.send();
+        }
+
+    </script>
+
+</body>
+</html>
+
