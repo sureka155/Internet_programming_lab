@@ -1,1 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internet Programming Online Exam</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
+<body>
+
+<div class="container">
+
+    <div id="registerPage" class="card">
+        <h1>Online Examination</h1>
+        <h2>Internet Programming</h2>
+
+        <input type="text" id="regName" placeholder="Enter Your Name">
+        <input type="email" id="regEmail" placeholder="Enter Email">
+        <input type="password" id="regPassword" placeholder="Enter Password">
+
+        <button onclick="register()">Register</button>
+
+        <p id="regMsg"></p>
+
+        <p>
+            Already registered?
+            <a href="#" onclick="showLogin()">Login</a>
+        </p>
+    </div>
+
+
+    <div id="loginPage" class="card hidden">
+        <h1>Online Examination</h1>
+        <h2>Student Login</h2>
+
+        <input type="email" id="loginEmail" placeholder="Enter Email">
+        <input type="password" id="loginPassword" placeholder="Enter Password">
+
+        <button onclick="login()">Login</button>
+
+        <p id="loginMsg"></p>
+
+        <p>
+            New student?
+            <a href="#" onclick="showRegister()">Register</a>
+        </p>
+    </div>
+
+
+    <div id="examPage" class="card hidden">
+
+        <h1>Internet Programming Exam</h1>
+
+        <p class="student">
+            Student: <b id="studentName"></b>
+        </p>
+
+        <p class="instructions">
+            Answer all 10 questions.
+        </p>
+
+        <div id="questions"></div>
+
+        <button onclick="submitExam()">Submit Exam</button>
+
+    </div>
+
+    <div id="resultPage" class="card hidden">
+
+        <h1>Exam Result</h1>
+
+        <h2>Congratulations 🎉</h2>
+
+        <p>
+            Student Name:
+            <b id="resultName"></b>
+        </p>
+
+        <div class="score" id="score"></div>
+
+        <h3 id="resultText"></h3>
+
+        <button onclick="restartExam()">Take Exam Again</button>
+        <button class="logout" onclick="logout()">Logout</button>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
